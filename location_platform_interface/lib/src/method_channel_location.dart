@@ -42,6 +42,7 @@ class MethodChannelLocation extends LocationPlatform {
   /// often a new location is sent through [onLocationChanged].
   @override
   Future<bool> changeSettings({
+    bool allowsBackgroundLocationUpdates = false,
     LocationAccuracy accuracy = LocationAccuracy.high,
     int interval = 1000,
     double distanceFilter = 0,
@@ -49,6 +50,7 @@ class MethodChannelLocation extends LocationPlatform {
     final int result = await _methodChannel.invokeMethod(
       'changeSettings',
       <String, dynamic>{
+        'allowsBackgroundLocationUpdates': allowsBackgroundLocationUpdates,
         'accuracy': accuracy.index,
         'interval': interval,
         'distanceFilter': distanceFilter

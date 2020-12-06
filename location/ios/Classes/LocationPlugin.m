@@ -71,6 +71,7 @@
             self.clLocationManager.desiredAccuracy =
                 [dictionary[call.arguments[@"accuracy"]] doubleValue];
             double distanceFilter = [call.arguments[@"distanceFilter"] doubleValue];
+            self.clLocationManager.allowsBackgroundLocationUpdates = [call.arguments[@"allowsBackgroundLocationUpdates"] boolValue];
             if (distanceFilter == 0){
                 distanceFilter = kCLDistanceFilterNone;
             }

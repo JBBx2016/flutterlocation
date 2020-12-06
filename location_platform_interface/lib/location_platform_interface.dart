@@ -36,6 +36,7 @@ class LocationPlatform extends PlatformInterface {
   /// [LocationData]. The [interval] and [distanceFilter] are controlling how
   /// often a new location is sent through [onLocationChanged].
   Future<bool> changeSettings({
+    bool allowsBackgroundLocationUpdates,
     LocationAccuracy accuracy,
     int interval,
     double distanceFilter,
